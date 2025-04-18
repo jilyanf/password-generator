@@ -1,0 +1,173 @@
+:root {
+    --bg: #ffd1dc;
+    --container: #fff0f5;
+    --field: #ffd1dc;
+    --text: #333;
+    --accent: #ff69b4;
+    --text-accent: #f2f2f2;
+    --range-unfilled: #33333380;
+}
+
+body {
+    font-family: "Fredoka", sans-serif;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--container);
+    border-radius: 1rem;
+    width: 25rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    color: var(--text);
+}
+
+.output {
+    background-color: var(--field);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.length-selector label {
+    color: var(--text);
+    font-size: 0.8rem;
+}
+
+.slider-min,
+.slider-max {
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: bold;
+    text-align: center;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--field);
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    margin-top: 15px;
+}
+
+/* Style the actual slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    outline: none;
+    background: linear-gradient(
+        to right,
+        var(--accent) 0%,
+        var(--accent) var(--percent),
+        #ccc var(--percent),
+        #ccc 100%
+    );
+    transition: background 0.3s ease;
+}
+  
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    background: var(--text);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+  
+input[type="range"]::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    background: var(--text);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.options p {
+    color: var(--text);
+    font-size: 0.8rem;
+}
+
+.switch-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    background-color: var(--field);
+    height: 2rem;
+    font-size: 1rem;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    color: var(--text);
+    position: relative;
+    cursor: pointer;
+}
+  
+.switch-label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: var(--container);
+    border-radius: 34px;
+    transition: 0.4s;
+}
+  
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--text);
+    border-radius: 50%;
+    transition: 0.4s;
+}
+  
+/* When checkbox is checked */
+.switch-label input:checked + .slider {
+    background-color: var(--accent);
+}
+  
+.switch-label input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+button {
+    width: 100%;
+    background-color: var(--accent);
+    color: var(--text-accent);
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 1rem 1.5rem;
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
