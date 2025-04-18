@@ -34,11 +34,15 @@ h1 {
 }
 
 .output {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--field);
     color: var(--text);
     padding: 0.5rem 1rem;
     margin: 1rem 0;
     border-radius: 0.5rem;
+    font-weight: 500;
 }
 
 .length-selector label {

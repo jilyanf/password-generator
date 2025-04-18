@@ -8,12 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <h1> Password Generator </h1>
 
-        <div class="output" id="password">&nbsp;</div>
+        <div class="output" id="password">
+            <span id="password-text">&nbsp;</span>
+            <i class="fa-regular fa-copy" id="copy-icon" title="Copy to clipboard"></i>
+        </div>
 
         <div class="length-selector">
             <label for="length-slider">

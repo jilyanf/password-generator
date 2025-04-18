@@ -15,7 +15,7 @@
   const SYMBOL_CHARS = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
   updateSliderBackground();
-  
+
   // Update slider value display
   lengthSlider.addEventListener("input", () => {
     sliderValue.textContent = lengthSlider.value;
@@ -49,7 +49,7 @@
     if (includeSymbols.checked) chars += SYMBOL_CHARS;
 
     if (chars.length === 0) {
-      passwordOutput.textContent = "Select at least one option!";
+      document.getElementById("password-text").textContent = "Select at least one option!";
       return;
     }
 
@@ -59,5 +59,26 @@
       password += chars[randomIndex];
     }
 
-    passwordOutput.textContent = password;
+    document.getElementById("password-text").textContent = password;
   });
+
+  const copyIcon = document.getElementById("copy-icon");
+  const passwordText = document.getElementById("password-text");
+
+  copyIcon.addEventListener("click", () => {
+    const text = passwordText.textContent.trim();
+    if (!text || text === "Select at least one option!") return;
+
+    navigator.clipboard.writeText(text).then(() => {
+      copyIcon.classList.remove("fa-copy");
+      copyIcon.classList.add("fa-solid", "fa-check");
+
+      setTimeout(() => {
+        copyIcon.classList.remove("fa-solid", "fa-check");
+        copyIcon.classList.add("fa-copy");
+      }, 1500);
+    }).catch(err => {
+      console.error("Failed to copy!", err);
+    });
+  });
+
