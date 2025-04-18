@@ -38,7 +38,7 @@ h1 {
     color: var(--text);
     padding: 0.5rem 1rem;
     margin: 1rem 0;
-    text-align: center;
+    border-radius: 0.5rem;
 }
 
 .length-selector label {
@@ -60,7 +60,7 @@ h1 {
     gap: 10px;
     background-color: var(--field);
     padding: 0.5rem 1rem;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     margin-top: 15px;
 }
 
@@ -111,7 +111,7 @@ input[type="range"]::-moz-range-thumb {
     align-items: center;
     margin: 15px 0;
     padding: 0.5rem 1rem;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     background-color: var(--field);
     height: 2rem;
     font-size: 1rem;
@@ -163,7 +163,7 @@ button {
     background-color: var(--accent);
     color: var(--text-accent);
     border: none;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     cursor: pointer;
     margin-top: 15px;
     padding: 1rem 1.5rem;
